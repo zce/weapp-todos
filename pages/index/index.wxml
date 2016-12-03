@@ -21,6 +21,56 @@
       <text class="name">Learning JavaScript</text>
       <icon class="remove" type="clear" size="16"></icon>
     </view>
+    <view class="item">
+      <icon class="checkbox" type="circle"></icon>
+      <text class="name">Learning CSS</text>
+      <icon class="remove" type="clear" size="16"></icon>
+    </view>
+    <view class="item">
+      <icon class="checkbox" type="circle"></icon>
+      <text class="name">Learning JavaScript</text>
+      <icon class="remove" type="clear" size="16"></icon>
+    </view>
+    <view class="item">
+      <icon class="checkbox" type="circle"></icon>
+      <text class="name">Learning CSS</text>
+      <icon class="remove" type="clear" size="16"></icon>
+    </view>
+    <view class="item">
+      <icon class="checkbox" type="circle"></icon>
+      <text class="name">Learning JavaScript</text>
+      <icon class="remove" type="clear" size="16"></icon>
+    </view>
+    <view class="item">
+      <icon class="checkbox" type="circle"></icon>
+      <text class="name">Learning CSS</text>
+      <icon class="remove" type="clear" size="16"></icon>
+    </view>
+    <view class="item">
+      <icon class="checkbox" type="circle"></icon>
+      <text class="name">Learning JavaScript</text>
+      <icon class="remove" type="clear" size="16"></icon>
+    </view>
+    <view class="item">
+      <icon class="checkbox" type="circle"></icon>
+      <text class="name">Learning CSS</text>
+      <icon class="remove" type="clear" size="16"></icon>
+    </view>
+    <view class="item">
+      <icon class="checkbox" type="circle"></icon>
+      <text class="name">Learning JavaScript</text>
+      <icon class="remove" type="clear" size="16"></icon>
+    </view>
+    <view class="item">
+      <icon class="checkbox" type="circle"></icon>
+      <text class="name">Learning CSS</text>
+      <icon class="remove" type="clear" size="16"></icon>
+    </view>
+    <view class="item">
+      <icon class="checkbox" type="circle"></icon>
+      <text class="name">Learning JavaScript</text>
+      <icon class="remove" type="clear" size="16"></icon>
+    </view>
   </view>
   <view class="footer">
     <text class="btn">Toggle all</text>
