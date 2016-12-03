@@ -1,0 +1,76 @@
+.container {
+  height: 100%;
+  padding: 20rpx;
+  box-sizing: border-box;
+  border-top: 1rpx solid #e5e5e5;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  border: 1rpx solid #e0e0e0;
+  border-radius: 10rpx;
+  box-shadow: 0 0 10rpx #ccc;
+  margin-bottom: 20rpx;
+  padding: 20rpx;
+}
+
+.header .plus {
+  width: 41rpx;
+  height: 41rpx;
+  margin-right: 20rpx;
+}
+
+.header .new-todo {
+  flex: 1;
+  font-size: 28rpx;
+}
+
+.todos {
+  border: 1rpx solid #e0e0e0;
+  border-radius: 10rpx;
+  box-shadow: 0 0 10rpx #ccc;
+}
+
+.todos .item {
+  display: flex;
+  align-items: center;
+  padding: 20rpx;
+  border-bottom: 1rpx solid #e0e0e0;
+}
+
+.todos .item:last-child {
+  border-bottom: 0;
+}
+
+.todos .item .name {
+  flex: 1;
+  font-size: 30rpx;
+  color: #444;
+}
+
+.todos .item.completed .name {
+  text-decoration: line-through;
+  color: #888;
+}
+
+.todos .item .checkbox {
+  margin-right: 10rpx;
+}
+
+.todos .item .remove {
+  cursor: pointer;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30rpx;
+  padding: 0 10rpx;
+  font-size: 26rpx;
+  color: #777;
+}
+
+.footer .btn {
+  cursor: pointer;
+}

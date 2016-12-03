@@ -1,0 +1,30 @@
+<view class="container">
+  <view class="header">
+    <image class="plus" src="../../images/plus.png"/>
+    <input class="new-todo"/>
+  </view>
+  <view class="todos">
+    <!-- List items should get the class `completed` when marked as completed -->
+    <view class="item completed">
+      <!-- completed: success, todo: circle -->
+      <icon class="checkbox" type="success"></icon>
+      <text class="name">Learning HTML</text>
+      <icon class="remove" type="clear" size="16"></icon>
+    </view>
+    <view class="item">
+      <icon class="checkbox" type="circle"></icon>
+      <text class="name">Learning CSS</text>
+      <icon class="remove" type="clear" size="16"></icon>
+    </view>
+    <view class="item">
+      <icon class="checkbox" type="circle"></icon>
+      <text class="name">Learning JavaScript</text>
+      <icon class="remove" type="clear" size="16"></icon>
+    </view>
+  </view>
+  <view class="footer">
+    <text class="btn">Toggle all</text>
+    <text>0 item left</text>
+    <text class="btn">Clear completed</text>
+  </view>
+</view>
