@@ -12,7 +12,8 @@ Page({
       { name: 'Learning ECMAScript 2016', completed: false },
       { name: 'Learning React', completed: false }
     ],
-    leftCount: 3
+    leftCount: 3,
+    allCompleted: false
   },
   inputChangeHandle: function (e) {
     this.setData({ input: e.detail.value })
@@ -43,5 +44,24 @@ Page({
       todos: todos,
       leftCount: this.data.leftCount - (remove.completed ? 0 : 1)
     })
+  },
+  toggleAllHandle: function (e) {
+    this.data.allCompleted = !this.data.allCompleted
+    var todos = this.data.todos
+    for (var i = todos.length - 1; i >= 0; i--) {
+      todos[i].completed = this.data.allCompleted
+    }
+    this.setData({
+      todos: todos,
+      leftCount: this.data.allCompleted ? 0 : todos.length
+    })
+  },
+  clearCompletedHandle: function (e) {
+    var todos = this.data.todos
+    var remains = []
+    for (var i = 0; i < todos.length; i++) {
+      todos[i].completed || remains.push(todos[i])
+    }
+    this.setData({ todos: remains })
   }
 })

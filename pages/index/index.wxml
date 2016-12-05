@@ -13,8 +13,8 @@
     </view>
   </view>
   <view class="footer">
-    <text class="btn">Toggle all</text>
+    <text class="btn" bindtap="toggleAllHandle">Toggle all</text>
     <text>{{ leftCount }} item left</text>
-    <text class="btn">Clear completed</text>
+    <text class="btn" bindtap="clearCompletedHandle">Clear completed</text>
   </view>
 </view>
