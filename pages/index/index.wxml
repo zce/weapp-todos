@@ -1,7 +1,7 @@
 <view class="container">
   <view class="header">
-    <image class="plus" src="../../images/plus.png"/>
-    <input class="new-todo"/>
+    <image class="plus" src="../../images/plus.png" bindtap="addTodoHandle"/>
+    <input class="new-todo" value="{{ input }}" placeholder="Anything here..." bindinput="inputChangeHandle"/>
   </view>
   <view class="todos">
     <!-- List items should get the class `completed` when marked as completed -->
