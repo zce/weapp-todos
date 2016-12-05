@@ -5,10 +5,10 @@
   </view>
   <view class="todos">
     <!-- List items should get the class `completed` when marked as completed -->
-    <view class="item{{ item.completed ? ' completed' : '' }}" wx:for="{{ todos }}" wx:key="{{ index }}">
+    <view class="item{{ item.completed ? ' completed' : '' }}" wx:for="{{ todos }}" wx:key="{{ index }}" bindtap="toggleTodoHandle" data-index="{{ index }}">
       <!-- completed: success, todo: circle -->
       <icon class="checkbox" type="{{ item.completed ? 'success' : 'circle' }}"/>
-      <text class="name">{{ item.name }}</text>
+      <text class="name" data-demo="123">{{ item.name }}</text>
       <icon class="remove" type="clear" size="16"/>
     </view>
   </view>

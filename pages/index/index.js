@@ -20,6 +20,19 @@ Page({
   addTodoHandle: function (e) {
     var todos = this.data.todos
     todos.push({ name: this.data.input, completed: false })
-    this.setData({ todos: todos })
+    this.setData({
+      input: '',
+      todos: todos,
+      leftCount: this.data.leftCount + 1
+    })
+  },
+  toggleTodoHandle: function (e) {
+    var index = e.currentTarget.dataset.index
+    var todos = this.data.todos
+    todos[index].completed = !todos[index].completed
+    this.setData({
+      todos: todos,
+      leftCount: this.data.leftCount + (todos[index].completed ? -1 : 1)
+    })
   }
 })
