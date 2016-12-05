@@ -34,5 +34,14 @@ Page({
       todos: todos,
       leftCount: this.data.leftCount + (todos[index].completed ? -1 : 1)
     })
+  },
+  removeTodoHandle: function (e) {
+    var index = e.currentTarget.dataset.index
+    var todos = this.data.todos
+    todos.splice(index, 1)
+    this.setData({
+      todos: todos,
+      leftCount: this.data.leftCount - 1
+    })
   }
 })
