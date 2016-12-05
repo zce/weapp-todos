@@ -7,10 +7,10 @@ Page({
   data: {
     input: '',
     todos: [
-      // { name: 'Learning HTML5', completed: true },
-      // { name: 'Learning CSS3', completed: false },
-      // { name: 'Learning ECMAScript 2016', completed: false },
-      // { name: 'Learning React', completed: false }
+      { name: 'Learning HTML5', completed: true },
+      { name: 'Learning CSS3', completed: false },
+      { name: 'Learning ECMAScript 2016', completed: false },
+      { name: 'Learning React', completed: false }
     ],
     leftCount: 3,
     allCompleted: false
@@ -19,6 +19,7 @@ Page({
     this.setData({ input: e.detail.value })
   },
   addTodoHandle: function (e) {
+    if (!this.data.input || !this.data.input.trim()) return
     var todos = this.data.todos
     todos.push({ name: this.data.input, completed: false })
     this.setData({
