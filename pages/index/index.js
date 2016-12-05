@@ -38,10 +38,10 @@ Page({
   removeTodoHandle: function (e) {
     var index = e.currentTarget.dataset.index
     var todos = this.data.todos
-    todos.splice(index, 1)
+    var remove = todos.splice(index, 1)[0]
     this.setData({
       todos: todos,
-      leftCount: this.data.leftCount - 1
+      leftCount: this.data.leftCount - (remove.completed ? 0 : 1)
     })
   }
 })
