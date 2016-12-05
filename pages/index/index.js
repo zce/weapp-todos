@@ -7,10 +7,10 @@ Page({
   data: {
     input: '',
     todos: [
-      { name: 'Learning HTML5', completed: true },
-      { name: 'Learning CSS3', completed: false },
-      { name: 'Learning ECMAScript 2016', completed: false },
-      { name: 'Learning React', completed: false }
+      // { name: 'Learning HTML5', completed: true },
+      // { name: 'Learning CSS3', completed: false },
+      // { name: 'Learning ECMAScript 2016', completed: false },
+      // { name: 'Learning React', completed: false }
     ],
     leftCount: 3,
     allCompleted: false
