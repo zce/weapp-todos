@@ -4,18 +4,27 @@
 // 4. 设计交互操作事件
 // 5. 数据存储
 Page({
+  // ===== 页面数据对象 =====
   data: {
     input: '',
-    todos: [
-      { name: 'Learning HTML5', completed: true },
-      { name: 'Learning CSS3', completed: false },
-      { name: 'Learning ECMAScript 2016', completed: false },
-      { name: 'Learning React', completed: false },
-      { name: 'Learning Vue', completed: false }
-    ],
-    leftCount: 3,
+    todos: [],
+    leftCount: 0,
     allCompleted: false
   },
+  // ===== 页面生命周期方法 =====
+  onLoad: function () {
+    var todos = wx.getStorageSync('todos_list')
+    if (todos) {
+      var leftCount = todos.filter(function (item) {
+        return !item.completed
+      }).length
+      this.setData({ todos: todos, leftCount: leftCount })
+    }
+  },
+  save: function () {
+    wx.setStorageSync('todos_list', this.data.todos)
+  },
+  // ===== 事件处理函数 =====
   inputChangeHandle: function (e) {
     this.setData({ input: e.detail.value })
   },
@@ -28,6 +37,7 @@ Page({
       todos: todos,
       leftCount: this.data.leftCount + 1
     })
+    this.save()
   },
   toggleTodoHandle: function (e) {
     var index = e.currentTarget.dataset.index
@@ -37,6 +47,7 @@ Page({
       todos: todos,
       leftCount: this.data.leftCount + (todos[index].completed ? -1 : 1)
     })
+    this.save()
   },
   removeTodoHandle: function (e) {
     var index = e.currentTarget.dataset.index
@@ -46,6 +57,7 @@ Page({
       todos: todos,
       leftCount: this.data.leftCount - (remove.completed ? 0 : 1)
     })
+    this.save()
   },
   toggleAllHandle: function (e) {
     this.data.allCompleted = !this.data.allCompleted
@@ -57,6 +69,7 @@ Page({
       todos: todos,
       leftCount: this.data.allCompleted ? 0 : todos.length
     })
+    this.save()
   },
   clearCompletedHandle: function (e) {
     var todos = this.data.todos
@@ -65,5 +78,6 @@ Page({
       todos[i].completed || remains.push(todos[i])
     }
     this.setData({ todos: remains })
+    this.save()
   }
 })
