@@ -11,8 +11,10 @@ Page({
     leftCount: 0,
     allCompleted: false
   },
-  // ===== 页面生命周期方法 =====
-  onLoad: function () {
+  save: function () {
+    wx.setStorageSync('todos_list', this.data.todos)
+  },
+  load: function () {
     var todos = wx.getStorageSync('todos_list')
     if (todos) {
       var leftCount = todos.filter(function (item) {
@@ -21,8 +23,9 @@ Page({
       this.setData({ todos: todos, leftCount: leftCount })
     }
   },
-  save: function () {
-    wx.setStorageSync('todos_list', this.data.todos)
+  // ===== 页面生命周期方法 =====
+  onLoad: function () {
+    this.load()
   },
   // ===== 事件处理函数 =====
   inputChangeHandle: function (e) {
