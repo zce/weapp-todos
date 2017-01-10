@@ -1,1 +1,39 @@
-/* pages/logs/logs.wxss */
+.container {
+  padding: 20rpx;
+  border-top: 1rpx solid #e5e5e5;
+}
+
+.logs {
+  border: 1rpx solid #e0e0e0;
+  border-radius: 10rpx;
+  box-shadow: 0 0 5rpx #e0e0e0;
+}
+
+.item {
+  padding: 20rpx;
+  border-bottom: 1rpx solid #f0f0f0;
+  font-size: 30rpx;
+  color: #888;
+}
+
+.item:last-child {
+  border-bottom: 0;
+}
+
+.timestamp {
+  display: block;
+  margin-bottom: 10rpx;
+}
+
+.name {
+  display: inline-block;
+  width: 380rpx;
+  color: #aa0;
+}
+
+.action {
+  display: inline-block;
+  width: 280rpx;
+  color: #f40;
+  text-align: right;
+}

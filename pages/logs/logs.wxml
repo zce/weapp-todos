@@ -1,2 +1,9 @@
-<!--pages/logs/logs.wxml-->
-<text>pages/logs/logs.wxml</text>
+<view class="container">
+  <view class="logs" wx:if="{{ logs.length }}">
+    <view class="item" wx:for="{{ logs }}">
+      <text class="timestamp">[{{ item.timestamp }}]</text>
+      <text class="name">{{ item.name }}</text>
+      <text class="action">{{ item.action }}</text>
+    </view>
+  </view>
+</view>
