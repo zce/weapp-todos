@@ -1,15 +1,10 @@
-.container {
-  padding: 20rpx;
-  border-top: 1rpx solid #e5e5e5;
-}
-
 .header {
   display: flex;
   align-items: center;
   border: 1rpx solid #e0e0e0;
   border-radius: 10rpx;
   box-shadow: 0 0 5rpx #e0e0e0;
-  margin-bottom: 20rpx;
+  margin-bottom: 30rpx;
   padding: 20rpx;
 }
 
@@ -33,12 +28,16 @@
 .todos .item {
   display: flex;
   align-items: center;
-  padding: 20rpx;
+  padding: 25rpx;
   border-bottom: 1rpx solid #e0e0e0;
 }
 
 .todos .item:last-child {
   border-bottom: 0;
+}
+
+.todos .item .checkbox {
+  margin-right: 20rpx;
 }
 
 .todos .item .name {
@@ -51,15 +50,11 @@
   text-decoration: line-through;
   color: #888;
 }
-
-.todos .item .checkbox {
-  margin-right: 10rpx;
-}
-
+/* 
 .todos .item .remove {
   cursor: pointer;
 }
-
+*/
 .footer {
   display: flex;
   justify-content: space-between;
@@ -68,11 +63,11 @@
   font-size: 26rpx;
   color: #777;
 }
-
+/* 
 .footer .btn {
   cursor: pointer;
 }
-
+*/
 .empty {
   display: flex;
   flex-direction: column;

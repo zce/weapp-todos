@@ -1,10 +1,4 @@
-// 1. 完成页面结构、布局、样式
-// 2. 设计数据结构
-// 3. 完成数据绑定
-// 4. 设计交互操作事件
-// 5. 数据存储
 Page({
-  // ===== 页面数据对象 =====
   data: {
     input: '',
     todos: [],
@@ -12,10 +6,12 @@ Page({
     allCompleted: false,
     logs: []
   },
+
   save: function () {
     wx.setStorageSync('todo_list', this.data.todos)
     wx.setStorageSync('todo_logs', this.data.logs)
   },
+
   load: function () {
     var todos = wx.getStorageSync('todo_list')
     if (todos) {
@@ -29,20 +25,21 @@ Page({
       this.setData({ logs: logs })
     }
   },
-  // ===== 页面生命周期方法 =====
+
   onLoad: function () {
     this.load()
   },
-  // ===== 事件处理函数 =====
+
   inputChangeHandle: function (e) {
     this.setData({ input: e.detail.value })
   },
+
   addTodoHandle: function (e) {
     if (!this.data.input || !this.data.input.trim()) return
     var todos = this.data.todos
     todos.push({ name: this.data.input, completed: false })
     var logs = this.data.logs
-    logs.push({ timestamp: new Date(), action: '新增', name: this.data.input })
+    logs.push({ timestamp: new Date(), action: 'Add', name: this.data.input })
     this.setData({
       input: '',
       todos: todos,
@@ -51,6 +48,7 @@ Page({
     })
     this.save()
   },
+
   toggleTodoHandle: function (e) {
     var index = e.currentTarget.dataset.index
     var todos = this.data.todos
@@ -58,7 +56,7 @@ Page({
     var logs = this.data.logs
     logs.push({
       timestamp: new Date(),
-      action: todos[index].completed ? '标记完成' : '标记未完成',
+      action: todos[index].completed ? 'Finish' : 'Restart',
       name: todos[index].name
     })
     this.setData({
@@ -68,12 +66,13 @@ Page({
     })
     this.save()
   },
+
   removeTodoHandle: function (e) {
     var index = e.currentTarget.dataset.index
     var todos = this.data.todos
     var remove = todos.splice(index, 1)[0]
     var logs = this.data.logs
-    logs.push({ timestamp: new Date(), action: '移除', name: remove.name })
+    logs.push({ timestamp: new Date(), action: 'Remove', name: remove.name })
     this.setData({
       todos: todos,
       leftCount: this.data.leftCount - (remove.completed ? 0 : 1),
@@ -81,6 +80,7 @@ Page({
     })
     this.save()
   },
+
   toggleAllHandle: function (e) {
     this.data.allCompleted = !this.data.allCompleted
     var todos = this.data.todos
@@ -90,8 +90,8 @@ Page({
     var logs = this.data.logs
     logs.push({
       timestamp: new Date(),
-      action: this.data.allCompleted ? '标记完成' : '标记未完成',
-      name: '全部任务'
+      action: this.data.allCompleted ? 'Finish' : 'Restart',
+      name: 'All todos'
     })
     this.setData({
       todos: todos,
@@ -100,6 +100,7 @@ Page({
     })
     this.save()
   },
+  
   clearCompletedHandle: function (e) {
     var todos = this.data.todos
     var remains = []
@@ -109,8 +110,8 @@ Page({
     var logs = this.data.logs
     logs.push({
       timestamp: new Date(),
-      action: '清空',
-      name: '已完成任务'
+      action: 'Clear',
+      name: 'Completed todo'
     })
     this.setData({ todos: remains, logs: logs })
     this.save()

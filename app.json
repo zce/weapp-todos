@@ -10,21 +10,22 @@
     "navigationBarTextStyle":"black"
   },
   "tabBar": {
-    "borderStyle": "white",
-    "backgroundColor": "#f5f5f5",
+    "color": "#999",
     "selectedColor": "#222",
+    "backgroundColor": "#f8f9fb",
+    "borderStyle": "white",
     "list": [
       {
         "pagePath": "pages/index/index",
-        "text": "TODOS",
-        "iconPath": "images/home.png",
-        "selectedIconPath": "images/home-actived.png"
+        "text": "todos",
+        "iconPath": "assets/todos.png",
+        "selectedIconPath": "assets/todos-active.png"
       },
       {
         "pagePath": "pages/logs/logs",
-        "text": "LOGS",
-        "iconPath": "images/note.png",
-        "selectedIconPath": "images/note-actived.png"
+        "text": "logs",
+        "iconPath": "assets/logs.png",
+        "selectedIconPath": "assets/logs-active.png"
       }
     ]
   }

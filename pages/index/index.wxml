@@ -1,6 +1,6 @@
 <view class="container">
   <view class="header">
-    <image class="plus" src="/images/plus.png"/>
+    <image class="plus" src="../../assets/plus.png"/>
     <input class="new-todo" value="{{ input }}" placeholder="Anything here..." auto-focus bindinput="inputChangeHandle" bindchange="addTodoHandle"/>
   </view>
   <block wx:if="{{ todos.length }}">
@@ -15,14 +15,14 @@
     </view>
     <view class="footer">
       <text class="btn" bindtap="toggleAllHandle">Toggle all</text>
-      <text wx:if="{{ leftCount }}">{{ leftCount }} item{{ leftCount === 1 ? '' : 's' }} left</text>
-      <text class="btn" bindtap="clearCompletedHandle">Clear completed</text>
+      <text wx:if="{{ leftCount }}">{{ leftCount }} {{ leftCount === 1 ? 'item' : 'items' }} left</text>
+      <text class="btn" wx:if="{{ todos.length > leftCount }}" bindtap="clearCompletedHandle">Clear completed</text>
     </view>
   </block>
   <block wx:else>
     <view class="empty">
       <text class="title">Congratulations!</text>
-      <text class="content">There is no remaining TODOS</text>
+      <text class="content">There's no more work left.</text>
     </view>
   </block>
 </view>
