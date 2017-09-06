@@ -2,9 +2,11 @@
 
 > A todos app by wechat weapp runtime
 
+https://github.com/zce/weapp-todos
+
 ## Preview
 
-![TODOS](preview.png)
+![TODOS](https://user-images.githubusercontent.com/6166576/30123852-e4558ed2-9365-11e7-87a3-4c738b337550.png)
 
 ## Contributing
 
