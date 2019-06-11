@@ -1,4 +1,4 @@
-# WeChat App TODOS
+# weapp-todos
 
 > A todos app by wechat weapp runtime
 
